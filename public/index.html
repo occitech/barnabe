@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Barnabé 2</title>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+</head>
+<body>
+<audio id="audio" src="">
+    Your browser does not support the <code>audio</code> element.
+</audio>
+<p>
+    <img style="max-width:100%;height:100%;" src="http://www.coloriages.fr/coloriages/coloriage-tete-de-lapin.jpg" alt=""/>
+    Barnabé
+</p>
+</body>
+
+<script>
+    (function() {
+        var socket = io();
+        var audio = document.getElementById('audio');
+
+        socket.on('tts', function(url) {
+            audio.src = url;
+            audio.play();
+        });
+    })();
+</script>
+</html>

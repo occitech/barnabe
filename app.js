@@ -1,18 +1,43 @@
-var Hapi = require('hapi');
+var Hapi = require('hapi'),
+    Path = require('path'),
+    Inert = require('inert');
 
-var server = new Hapi.Server();
+var server = new Hapi.Server({
+    connections: {
+        routes: {
+            files: {
+                relativeTo: Path.join(__dirname, 'public')
+            }
+        }
+    }
+});
 
 server.connection({
     host: 'localhost',
     port: 3000
 });
 
+server.register(Inert, function () {});
+
+var io = require('socket.io')(server.listener);
+
+server.route({
+    method: 'GET',
+    path: '/',
+    handler : {
+        file: 'index.html'
+    }
+});
+
 server.route({
     method: 'GET',
     path:'/tts/{message}/{voice?}',
     handler: function (request, reply) {
-        var voice = request.params.voice ? encodeURIComponent(request.params.voice) : 'manon';
-        reply('TTS | voice : ' + voice + ', message : ' + encodeURIComponent(request.params.message));
+        var voice = request.params.voice ? encodeURIComponent(request.params.voice) : 'Damien';
+        var message = encodeURIComponent(request.params.message);
+        var url = 'https://www.voxygen.fr/sites/all/modules/voxygen_voices/assets/proxy/index.php?method=redirect&text=' + message + '&voice=' + voice + '&ts=1439996064650';
+        reply(url);
+        io.emit('tts', url);
     }
 });
 
