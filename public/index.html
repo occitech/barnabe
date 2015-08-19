@@ -20,7 +20,7 @@
         var socket = io();
         var audio = document.getElementById('audio');
 
-        socket.on('tts', function(url) {
+        socket.on('play', function(url) {
             audio.src = url;
             audio.play();
         });

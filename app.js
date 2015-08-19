@@ -37,7 +37,20 @@ server.route({
         var message = encodeURIComponent(request.params.message);
         var url = 'https://www.voxygen.fr/sites/all/modules/voxygen_voices/assets/proxy/index.php?method=redirect&text=' + message + '&voice=' + voice + '&ts=1439996064650';
         reply(url);
-        io.emit('tts', url);
+        io.emit('play', url);
+    }
+});
+
+server.route({
+    method: 'GET',
+    path:'/play',
+    handler: function (request, reply) {
+        var url = request.query.url || false;
+        reply(url);
+
+        if (url) {
+            io.emit('play', url);
+        }
     }
 });
 
