@@ -32,7 +32,7 @@ server.route({
     method: 'GET',
     path:'/tts/{message}/{voice?}',
     handler: function (request, reply) {
-        var voice = request.params.voice ? encodeURIComponent(request.params.voice) : 'Emma';
+        var voice = request.params.voice ? encodeURIComponent(request.params.voice) : 'Fabienne';
         var message = encodeURIComponent(request.params.message);
         var url = 'https://www.voxygen.fr/sites/all/modules/voxygen_voices/assets/proxy/index.php?method=redirect&text=' + message + '&voice=' + voice + '&ts=1439996064650';
         reply(url);
