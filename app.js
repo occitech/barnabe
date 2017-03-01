@@ -30,6 +30,14 @@ server.route({
 
 server.route({
     method: 'GET',
+    path: '/img/lapin.svg',
+    handler : {
+        file: 'img/lapin.svg'
+    }
+});
+
+server.route({
+    method: 'GET',
     path:'/tts/{message}/{voice?}',
     handler: function (request, reply) {
         var voice = request.params.voice ? encodeURIComponent(request.params.voice) : 'Fabienne';
