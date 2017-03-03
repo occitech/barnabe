@@ -8,9 +8,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
-   width="650pt"
-   height="650pt"
-   viewBox="0 0 650 650"
+   width="850pt"
+   height="680pt"
+   viewBox="0 0 850 680"
    preserveAspectRatio="xMidYMid meet"
    id="svg2"
    inkscape:version="0.91 r13725"
@@ -31,10 +31,10 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="0.24842105"
-     inkscape:cx="-126.80085"
+     inkscape:cx="-603.81357"
      inkscape:cy="475"
-     inkscape:window-x="1614"
-     inkscape:window-y="156"
+     inkscape:window-x="1630"
+     inkscape:window-y="167"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2">
     <inkscape:grid
@@ -55,7 +55,7 @@ Created by potrace 1.13, written by Peter Selinger 2001-2015
 </rdf:RDF>
 </metadata>
   <g
-     transform="matrix(0.1,0,0,-0.1,-44.81921,720.00768)"
+     transform="matrix(0.1088574,0,0,-0.1088574,22.424423,769.99509)"
      id="g6"
      style="fill:#000000;stroke:none">
     <path
